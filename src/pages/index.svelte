@@ -37,12 +37,9 @@
 
     return total * biaya_jasa; // Mengalikan total dengan biaya_jasa
   }
-  $: if (textarea.length > 1) {
+  $: if (textarea.length) {
     simpan();
     total = hitungTotalBiaya(textarea, $biaya_per_hari);
-  } else {
-    localforage.setItem("textarea", "");
-    total = 0;
   }
 </script>
 
